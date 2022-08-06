@@ -140,7 +140,11 @@ def build_layout(app: Dash) -> Dash:
     return app
 
 
-if __name__ == '__main__':
-    _app = _init_app()
-    _app = build_layout(_app)
-    _app.run_server(debug=True)
+_app = _init_app()
+_app = build_layout(_app)
+app = _app.server
+
+# if __name__ == '__main__':
+#     _app = _init_app()
+#     _app = build_layout(_app)
+#     _app.run_server(debug=True)
