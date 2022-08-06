@@ -1,5 +1,5 @@
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc
+from dash import html
 
 from dash.dependencies import Input, Output
 from maps import create_map
@@ -101,7 +101,8 @@ def build_layout(app: Dash) -> Dash:
                     dbc.Col(children=[
                         # Control components
                         read_markdown("markdowns/control_components.md"),
-                        html.Label('Export Region', style={"margin-top": "20px"}),
+                        html.Label('Export Region', style={
+                                   "margin-top": "20px"}),
                         build_export_region_dropdown_block(),
                         html.Label('PPE', style={"margin-top": "20px"}),
                         build_ppe_dropdown_block(),
